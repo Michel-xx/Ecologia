@@ -1,0 +1,49 @@
+@import "UTF-8";
+
+body {
+    margin: 0px;
+    padding: 0px;
+    text-shadow: 2px 1px 4px rgba(0, 0, 0, 0.336);
+
+}
+header {
+    margin: 0px;
+    padding: 70px 0px 0px 0px;
+    background-color: rgb(101, 110, 114);
+
+}
+
+nav {
+    background-color: black;
+    padding: 3px 0px 3px 2px;
+}
+
+nav > a {
+    text-align: left;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 0px 10px;
+}
+
+main {
+    background-color: rgb(209, 208, 208);
+    margin: 0px 2vw;
+}
+
+main > h1 {
+    padding-top: 10px;
+}
+ 
+main > p {
+    padding: 10px;
+}
+
+h1 {
+    padding-bottom: 40px ;
+}
+
+h1, h2 {
+    margin: 0px;
+    text-align: center;
+}
