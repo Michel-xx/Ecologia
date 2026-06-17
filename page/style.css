@@ -4,7 +4,6 @@ body {
     margin: 0px;
     padding: 0px;
     text-shadow: 2px 1px 4px rgba(0, 0, 0, 0.336);
-
 }
 header {
     margin: 0px;
@@ -31,6 +30,19 @@ main {
     margin: 0px 2vw;
 }
 
+.exemplo {
+    background-color: #b8b8b8;
+    margin-bottom: 0px;
+}
+
+.container-video {
+      display: flex;
+      justify-content: center; /* Centraliza na horizontal */
+      align-items: center;     /* Centraliza na vertical */
+      min-height: 400px;       /* Faz o contêiner ocupar a altura total da tela */
+      background-color: #b8b8b8; /* Cor de fundo opcional */
+    }
+
 main > h1 {
     padding-top: 10px;
 }
@@ -46,4 +58,16 @@ h1 {
 h1, h2 {
     margin: 0px;
     text-align: center;
+}
+h3 {
+    padding: 0px 0px 0px 16px;
+}
+
+h4 {
+    padding: 0px 0px 0px 10px;
+}
+
+p {
+    padding: 0px 0px 0px 2px;
+    text-indent: 10px;
 }
