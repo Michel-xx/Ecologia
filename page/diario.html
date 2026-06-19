@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecologia - Diário de Bordo</title>
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-dark: #1a1a1a;
+            --text-gray: #4a4a4a;
+            --nav-bg: #89c4f4;
+            --card-bg: #ffffff;
+            --accent-green: #004d1a;
+            --accent-blue: #2980b9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- CABEÇALHO (Header) --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo-icon {
+            font-size: 30px;
+            background: #d4e6d1;
+            border-radius: 50%;
+            padding: 5px;
+        }
+
+        .search-area {
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-area input {
+            padding: 8px 15px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        .search-area select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* --- MENU DE NAVEGAÇÃO --- */
+        nav {
+            background: linear-gradient(90deg, #9cd3eb 0%, #75bced 100%);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 40px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            opacity: 0.7;
+        }
+
+        /* --- CONTEÚDO PRINCIPAL (Diário de Bordo) --- */
+        .page-title {
+            text-align: center;
+            color: var(--accent-green);
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .log-container {
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .log-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--accent-green);
+            transition: transform 0.2s;
+        }
+
+        .log-card:hover {
+            transform: translateX(5px);
+        }
+
+        .log-date {
+            font-size: 18px;
+            color: var(--accent-blue);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            text-transform: capitalize;
+        }
+
+        .log-card p {
+            color: var(--text-gray);
+            font-size: 15px;
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+
+        .log-period {
+            font-size: 14px;
+            color: var(--text-dark);
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 20px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        /* --- RODAPÉ --- */
+        footer {
+            background-color: #e5e5e5;
+            padding: 20px 0;
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .log-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo-area">
+                <span class="logo-icon">🌿</span>
+                ECOLOGIA
+            </div>
+            <div class="search-area">
+                <input type="text" placeholder="Busca...">
+                <select>
+                    <option>EA</option>
+                </select>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicial</a></li>
+                <li><a href="visao.html">Visão computacional</a></li>
+                <li><a href="prototipo.html">Protótipo esgoto</a></li>
+                <li><a href="diario.html">Diário de bordo</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1 class="page-title">Diário de Bordo</h1>
+
+            <div class="log-container">
+                
+                <div class="log-card">
+                    <div class="log-date">📅 Dia 28 de maio de 2026</div>
+                    <p>Luis Otávio e Samuel Messias não participaram, ficaram mexendo no celular a reunião inteira.</p>
+                    <p>Vitória, Lavinia e Dafne ficaram conversando a reunião inteira, mas sem atrapalhar a reunião e responderam quando necessário.</p>
+                    <p>Cauan, Miguel, Paulo, Pedro, Arthur e Michael ficaram conversando a reunião inteira e não estavam levando nada a sério. Nayane e Ezequiel dormiram o tempo inteiro.</p>
+                    <p>Michel, Elloá e Kemilly participaram ativamente. Danielly e Thaylon permaneceram em silêncio durante o decorrer da reunião.</p>
+                </div>
+
+                <div class="log-card">
+                    <div class="log-date">📅 Dia 11 de junho de 2026</div>
+                    <p>Na reunião realizada na sala de informática no dia 11 de junho de 2026, começamos a refazer o protótipo no intuito de melhorá-lo e torná-lo esteticamente mais apresentável e bonito.</p>
+                    <p>Nós realizamos tal ação com a ajuda do professor Marcelo Melo e em sua presença. Estavam presentes na sala o Michel dos Santos, a Nayane Ponciano, a Léticia Jade, a Elloá Ferreira e o Miguel Braz.</p>
+                </div>
+
+                <div class="log-card">
+                    <div class="log-date">📅 Dia 12 de junho de 2026</div>
+                    <p>Na reunião realizada no dia 12 de junho de 2026, continuamos com a montagem do protótipo, realizando a pintura e a instalação do visor transparente, com a presença do professor Marcelo Melo.</p>
+                    <p>Estavam presentes na reunião o Michel dos Santos, a Léticia Jade, a Nayane Ponciano, a Elloá Ferreira e a Kemilly Cristina.</p>
+                </div>
+
+                <div class="log-card">
+                    <div class="log-date">📅 Dia 16 de junho de 2026</div>
+                    
+                    <div class="log-period">☀️ Matutino</div>
+                    <p>Na reunião realizada na sala de informática, no dia 16 de junho de 2026, realizamos os acabamentos estéticos do protótipo. A professora Amanda nos acompanhou durante a atividade. Estavam presentes na sala Danielly, Nayane, Kemilly, Leticia, Michel, Miguel, Paulo e Elloá.</p>
+                    <p>Entretanto, o aluno Miguel não colaborou com nenhuma das atividades, utilizando o computador para jogar. Já o aluno Paulo mostrou-se disposto a ajudar sempre que solicitado.</p>
+
+                    <div class="log-period">🌥️ Vespertino</div>
+                    <p>Na reunião realizada na sala de informática, no período da tarde no dia 16/06, continuamos com o acabamento do protótipo. Na sala estavam presentes todos os alunos e apenas a Elloa Ferreira e Letícia Jade realizaram essa tarefa, porém a Lavínia, Dafne, Vitória, Michel dos Santos, Paulo Henrique, Cauan, Ezequiel, Pedro Henrique, Kemilly e Nayane estavam dispostos a realizar quaisquer atividades solicitadas.</p>
+                    <p>O Samuel Messias, Luis Otávio, Arthur, Thayllon, Miguel e Michael jogaram no computador e ficaram falando alto e não mudaram a atitude mesmo com diversos avisos.</p>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

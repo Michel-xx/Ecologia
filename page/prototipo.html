@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecologia - Protótipo Esgoto Inteligente</title>
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-dark: #1a1a1a;
+            --text-gray: #4a4a4a;
+            --nav-bg: #89c4f4;
+            --card-bg: #ffffff;
+            --highlight-bg: #d4e6d1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- CABEÇALHO (Header) --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo-icon {
+            font-size: 30px;
+            background: var(--highlight-bg);
+            border-radius: 50%;
+            padding: 5px;
+        }
+
+        .search-area {
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-area input {
+            padding: 8px 15px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        .search-area select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* --- MENU DE NAVEGAÇÃO --- */
+        nav {
+            background: linear-gradient(90deg, #9cd3eb 0%, #75bced 100%);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 40px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            opacity: 0.7;
+        }
+
+        /* --- SEÇÃO HERÓI (Texto + Imagem) --- */
+        .hero-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .hero-text p {
+            margin-bottom: 15px;
+            color: var(--text-gray);
+            text-align: justify;
+        }
+
+        .hero-image {
+            flex: 0.8;
+            text-align: center;
+            background: #e9ecef;
+            border-radius: 15px;
+            padding: 10px;
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 250px;
+        }
+
+        /* --- SEÇÃO DA SOLUÇÃO (Novo) --- */
+        .solution-section {
+            background-color: var(--card-bg);
+            border-left: 6px solid #5cb85c;
+            padding: 25px 30px;
+            border-radius: 10px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .solution-section h2 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .solution-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .step {
+            background: var(--bg-color);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .step strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .step > p > strong {
+            display: inline;
+        }
+
+        /* --- CARDS INFORMATIVOS --- */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .card-icon {
+            font-size: 30px;
+        }
+
+        .card h3 {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .card p, .card ul {
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        .card ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        /* --- RODAPÉ --- */
+        .bottom-text {
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            padding: 0 50px;
+            line-height: 1.8;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 1024px) {
+            .cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .solution-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+            }
+            .cards-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .bottom-text {
+                padding: 0 10px;
+            }
+        }
+
+        img {
+            max-width: 600px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo-area">
+                <span class="logo-icon">🌿</span>
+                ECOLOGIA
+            </div>
+            <div class="search-area">
+                <input type="text" placeholder="Busca...">
+                <select>
+                    <option>EA</option>
+                </select>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicial</a></li>
+                <li><a href="visao.html">Visão computacional</a></li>
+                <li><a href="prototipo.html">Protótipo esgoto</a></li>
+                <li><a href="diario.html">Diário de bordo</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="hero-section">
+                <div class="hero-text">
+                    <h1>O Problema da Drenagem Urbana</h1>
+                    <p>Os bueiros (ou bocas de lobo) são a porta de entrada da água da chuva para o sistema de drenagem urbana. Quando eles estão entupidos por lixo, folhas ou terra, a água não tem para onde ir, gerando um efeito cascata de problemas sérios na cidade.</p>
+                    <p>Sem vazão, a água acumula rapidamente na superfície das ruas durante temporais. Em poucos minutos, vias transitáveis viram rios urbanos, invadindo calçadas e gerando perdas materiais imensas.</p>
+                    <p>A manutenção preventiva por parte do poder público antes do período de chuvas é essencial, mas frequentemente falha por falta de monitoramento adequado.</p>
+                </div>
+                <div class="hero-image">
+                    <img src="/WhatsApp Image 2026-06-17 at 14.50.39.jpeg" alt="">
+                </div>
+            </div>
+
+            <div class="solution-section">
+                <h2>💡 A Nossa Solução: Protótipo Esgoto Inteligente</h2>
+                <p>Para mitigar os graves problemas causados pelas enchentes e pelo entupimento das vias de drenagem, desenvolvemos este protótipo inovador. Ele automatiza o monitoramento e garante que a manutenção seja feita no momento exato.</p>
+                
+                <div class="solution-steps">
+                    <div class="step">
+                        <strong>1. Retenção 🗑️</strong>
+                        O sistema possui um cesto coletor interno projetado para reter resíduos sólidos, impedindo que o lixo desça para as tubulações principais.
+                    </div>
+                    <div class="step">
+                        <strong>2. Monitoramento Inteligente 📡</strong>
+                        <p>Um sensor acoplado mede a capacidade do cesto continuamente. Assim que o acúmulo de lixo atinge <strong>80% do limite</strong>, o sistema é acionado.</p>
+                    </div>
+                    <div class="step">
+                        <strong>3. Ação Rápida ⚡</strong>
+                        O protótipo envia um aviso automático aos servidores públicos. A equipe de limpeza vai direto ao local, esvazia o cesto e o reposiciona, evitando alagamentos.
+                    </div>
+                </div>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-icon">🌊</span>
+                        <h3>Alagamentos & Inundações</h3>
+                    </div>
+                    <p>Esse é o impacto mais imediato. Vias transitáveis viram rios urbanos, invadindo comércios e residências, gerando perdas materiais imensas.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-icon">🏥</span>
+                        <h3>Riscos à Saúde</h3>
+                    </div>
+                    <p>Maior risco de transmissão de doenças como:</p>
+                    <ul>
+                        <li><strong>Leptospirose</strong> (urina do rato) 🐀</li>
+                        <li><strong>Dengue, Zika e Chikungunya</strong> 🦟</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-icon">🚦</span>
+                        <h3>Impacto no Trânsito</h3>
+                    </div>
+                    <p>Cidades inteiras podem parar. Veículos enfrentam buracos ocultos e pane elétrica. Vias acabam totalmente interditadas para circulação.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-icon">🛣️</span>
+                        <h3>Danos à Infraestrutura</h3>
+                    </div>
+                    <p>Degradação do pavimento e buracos nas vias. Em casos reais, infiltrações atingem fundações e comprometem a estrutura de muros e imóveis.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-icon">🗑️</span>
+                        <h3>Poluição Visual e Odor</h3>
+                    </div>
+                    <p>O acúmulo de matéria orgânica e lixo misturado à água parada causa odor constante e desagradável, diminuindo a qualidade de vida da vizinhança.</p>
+                </div>
+            </div>
+
+            <p class="bottom-text">
+                O descarte incorreto de lixo (como garrafas PET e bitucas de cigarro) aliado à falta de manutenção preventiva resulta na degradação do espaço público. O <strong>Esgoto Inteligente</strong> atua diretamente na raiz desse problema, unindo tecnologia e sustentabilidade a favor da sociedade.
+            </p>
+        </main>
+    </div>
+
+</body>
+</html>

@@ -1,27 +1,536 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+
+<html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visão computacional</title>
-    <link rel="stylesheet" href="style.css">
+
+    <title>Ecologia - Página Inicial</title>
+
+    <style>
+
+        :root {
+
+            --bg-color: #f4f7f6;
+
+            --text-dark: #1a1a1a;
+
+            --text-gray: #4a4a4a;
+
+            --nav-bg: #89c4f4;
+
+            --card-bg: #ffffff;
+
+            --accent-green: #004d1a;
+
+            --accent-blue: #2980b9;
+
+        }
+
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+        }
+
+
+        body {
+
+            background-color: var(--bg-color);
+
+            color: var(--text-dark);
+
+            line-height: 1.6;
+
+        }
+
+
+        .container {
+
+            max-width: 1400px;
+
+            margin: 0 auto;
+
+            padding: 0 20px;
+
+        }
+
+
+        /* --- CABEÇALHO (Header) --- */
+
+        header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 20px 0;
+
+        }
+
+
+        .logo-area {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-size: 24px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .logo-icon {
+
+            font-size: 30px;
+
+            background: #d4e6d1;
+
+            border-radius: 50%;
+
+            padding: 5px;
+
+        }
+
+
+        .search-area {
+
+            display: flex;
+
+            gap: 10px;
+
+        }
+
+
+        .search-area input {
+
+            padding: 8px 15px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 20px;
+
+            outline: none;
+
+        }
+
+
+        .search-area select {
+
+            padding: 8px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 5px;
+
+        }
+
+
+        /* --- MENU DE NAVEGAÇÃO --- */
+
+        nav {
+
+            background: linear-gradient(90deg, #9cd3eb 0%, #75bced 100%);
+
+            border-radius: 10px;
+
+            padding: 15px;
+
+            margin-bottom: 40px;
+
+        }
+
+
+        nav ul {
+
+            list-style: none;
+
+            display: flex;
+
+            justify-content: space-around;
+
+        }
+
+
+        nav ul li a {
+
+            text-decoration: none;
+
+            color: var(--text-dark);
+
+            font-weight: 500;
+
+            font-size: 16px;
+
+        }
+
+
+        nav ul li a:hover {
+
+            opacity: 0.7;
+
+            text-decoration: underline;
+
+        }
+
+
+        /* --- SEÇÃO DE BOAS-VINDAS (Hero) --- */
+
+        .hero-home {
+
+            background: linear-gradient(135deg, #ffffff 0%, #eef5f9 100%);
+
+            border-radius: 15px;
+
+            padding: 60px 40px;
+
+            text-align: center;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+
+            margin-bottom: 50px;
+
+            border: 1px solid #e0e0e0;
+
+        }
+
+
+        .hero-home h1 {
+
+            color: var(--accent-green);
+
+            font-size: 36px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .hero-home p {
+
+            color: var(--text-gray);
+
+            font-size: 18px;
+
+            max-width: 800px;
+
+            margin: 0 auto;
+
+        }
+
+
+        .highlight-text {
+
+            color: var(--accent-blue);
+
+            font-weight: bold;
+
+        }
+
+
+        /* --- CARDS DE DESTAQUE (Links para as abas) --- */
+
+        .features-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 30px;
+
+            margin-bottom: 60px;
+
+        }
+
+
+        .feature-card {
+
+            background-color: var(--card-bg);
+
+            border-radius: 15px;
+
+            padding: 30px 20px;
+
+            text-align: center;
+
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+
+            transition: transform 0.3s, box-shadow 0.3s;
+
+            text-decoration: none; /* Porque faremos o card inteiro ser um link */
+
+            color: inherit;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+        }
+
+
+        .feature-card:hover {
+
+            transform: translateY(-10px);
+
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+
+        }
+
+
+        .feature-icon {
+
+            font-size: 50px;
+
+            margin-bottom: 20px;
+
+            background: #f0f7f4;
+
+            width: 90px;
+
+            height: 90px;
+
+            line-height: 90px;
+
+            border-radius: 50%;
+
+        }
+
+
+        .feature-card h2 {
+
+            font-size: 20px;
+
+            color: var(--accent-green);
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .feature-card p {
+
+            font-size: 14px;
+
+            color: var(--text-gray);
+
+            line-height: 1.5;
+
+        }
+
+
+        /* --- RODAPÉ --- */
+
+        footer {
+
+            background-color: #e5e5e5;
+
+            padding: 20px 0;
+
+            font-size: 13px;
+
+            color: var(--text-gray);
+
+        }
+
+
+        .footer-content {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+
+        .footer-links {
+
+            display: flex;
+
+            gap: 15px;
+
+        }
+
+
+        .footer-links a {
+
+            color: var(--text-gray);
+
+            text-decoration: none;
+
+        }
+
+
+        /* --- RESPONSIVIDADE --- */
+
+        @media (max-width: 900px) {
+
+            .features-grid {
+
+                grid-template-columns: repeat(1, 1fr);
+
+            }
+
+            .hero-home {
+
+                padding: 40px 20px;
+
+            }
+
+            .hero-home h1 {
+
+                font-size: 28px;
+
+            }
+
+        }
+
+
+        @media (max-width: 768px) {
+
+            nav ul {
+
+                flex-direction: column;
+
+                align-items: center;
+
+                gap: 15px;
+
+            }
+
+            header {
+
+                flex-direction: column;
+
+                gap: 15px;
+
+            }
+
+        }
+
+    </style>
+
 </head>
+
 <body>
-    <header>
-        <h1>Ecologia</h1>
+
+
+    <div class="container">
+
+        <header>
+
+            <div class="logo-area">
+
+                <span class="logo-icon">🌿</span>
+
+                ECOLOGIA
+
+            </div>
+
+            <div class="search-area">
+
+                <input type="text" placeholder="Busca...">
+
+                <select>
+
+                    <option>EA</option>
+
+                </select>
+
+            </div>
+
+        </header>
+
+
         <nav>
-            <a href="index.html">Inicial</a>
-            <a href="visaocomputacional.html">Visão computacional</a>
-            <a href="prototipoesgoto.html">Protótipo esgoto</a>
-            <a href="diariodebordo.html">Diario de bordo</a>
+
+            <ul>
+
+                <li><a href="index.html">Inicial</a></li>
+
+                <li><a href="visao.html">Visão computacional</a></li>
+
+                <li><a href="prototipo.html">Protótipo esgoto</a></li>
+
+                <li><a href="diario.html">Diário de bordo</a></li>
+
+            </ul>
+
         </nav>
-    </header>
-    <main>
-        <h2>Bem-Vindos</h2>
-        <p></p>
-    </main>
-    <footer>
-        
-    </footer>
+
+
+        <main>
+
+            <section class="hero-home">
+
+                <h1>Bem-Vindos ao Projeto Ecologia</h1>
+
+                <p>Nosso objetivo é unir <span class="highlight-text">Tecnologia, Sustentabilidade e Inteligência Artificial</span> para resolver problemas reais da nossa infraestrutura urbana e proteger o meio ambiente. Explore as seções abaixo para conhecer o nosso trabalho.</p>
+
+            </section>
+
+
+            <section class="features-grid">
+
+                
+
+                <a href="visaocomputacional.html" class="feature-card">
+
+                    <div class="feature-icon">👁️💻</div>
+
+                    <h2>Visão Computacional</h2>
+
+                    <p>Descubra como ensinamos as máquinas a observar os rios. Utilizando Inteligência Artificial e câmeras, monitoramos o nível da água em tempo real para prevenir enchentes e proteger comunidades.</p>
+
+                </a>
+
+
+                <a href="prototipoesgoto.html" class="feature-card">
+
+                    <div class="feature-icon">🌊🛠️</div>
+
+                    <h2>Protótipo Esgoto</h2>
+
+                    <p>Conheça nosso projeto de Esgoto Inteligente. Entenda os perigos dos bueiros entupidos, desde inundações até doenças, e veja a solução de infraestrutura que estamos construindo.</p>
+
+                </a>
+
+
+                <a href="diariodebordo.html" class="feature-card">
+
+                    <div class="feature-icon">📓📅</div>
+
+                    <h2>Diário de Bordo</h2>
+
+                    <p>Acompanhe o passo a passo da nossa equipe. Aqui registramos nossa rotina, o avanço da montagem dos protótipos, nossos desafios e o desenvolvimento do projeto dia após dia.</p>
+
+                </a>
+
+            </section>
+        </main>
+    </div>
+
 </body>
+
 </html>
