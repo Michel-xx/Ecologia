@@ -319,6 +319,13 @@
 
             }
         }
+
+        .imagem-responsiva {
+            width: 100%;
+            max-width: 800px; /* Impede que a imagem fique gigante em telas grandes */
+            height: auto;     /* Mantém a proporção original da imagem */
+            display: block;   /* Remove espaços em branco indesejados abaixo da imagem */
+        }
     </style>
 </head>
 <body>
@@ -402,7 +409,7 @@
                     </div>
 
                     <div class="bottom-image-container">
-                        <img src="imagem/WhatsApp Image 2026-06-17 at 14.50.39.jpeg" alt="">
+                        <img id="imagem-responsiva" src="imagem/WhatsApp Image 2026-06-17 at 14.50.39.jpeg" alt="">
                     </div>
 
                 </div>
