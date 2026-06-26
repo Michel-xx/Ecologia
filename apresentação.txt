@@ -1,0 +1,23 @@
+1. Introdução e Propósito
+"Olá a todos! Hoje vamos apresentar o nosso projeto de robótica, que foi totalmente desenvolvido com foco na sustentabilidade. O nosso trabalho atende diretamente ao ODS 6 da ONU (Água Potável e Saneamento), e escolhemos um problema bem próximo da nossa realidade: a preservação do Rio Manhuaçu, que infelizmente hoje se encontra muito poluído.
+
+Para combater isso, desenvolvemos duas soluções tecnológicas. Vamos a elas:"
+
+2. Projeto 1: Monitoramento de Enchentes
+"A primeira solução foca na segurança e prevenção. Desenvolvemos um sistema de monitoramento contra enchentes utilizando visão computacional.
+
+A ideia consiste em instalar câmeras em pontos estratégicos ao longo do Rio Manhuaçu para analisar o nível da água em tempo real. Vale ressaltar que, no estágio atual, o que trouxemos aqui é apenas uma demonstração de conceito, provando que a tecnologia é viável e pode ser aplicada em escala real no futuro."
+
+3. Projeto 2: Bueiro Inteligente
+"A nossa segunda solução ataca diretamente a poluição por resíduos sólidos antes que eles cheguem ao rio: trata-se de um bueiro inteligente.
+
+Como funciona: O bueiro possui uma cesta interna que barra a entrada de lixo na tubulação.
+
+O diferencial: Monitoramos o volume desse cesto. Assim que a capacidade atinge 80% de ocupação, o sistema eletrônico é acionado automaticamente.
+
+Ação rápida: No momento do acionamento, o sistema envia um aviso automático direto para os servidores públicos responsáveis. Com a localização exata, a equipe de limpeza vai direto ao ponto físico, esvazia o cesto e o reposiciona para o próximo ciclo."
+
+4. Conclusão
+"É importante lembrar que todo esse ecossistema do bueiro e do monitoramento é, por enquanto, apenas um protótipo. Nosso objetivo foi demonstrar como a robótica e a internet das coisas podem ser aliadas dos gestores públicos para salvar o Rio Manhuaçu e melhorar a qualidade de vida da nossa cidade.
+
+Muito obrigado pela atenção de todos, e estamos abertos a perguntas!"
